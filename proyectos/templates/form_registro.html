@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/Registros1.css' %}">
+    <title>Registro</title>
+</head>
+<body>
+
+
+    <section class="form-register">
+        <form method="post" action="{% url 'Inicio_sesion' %}" id="formReg" class="form_reg">
+        <center>
+            <h2>Formulario de Registro</h2>
+
+            <div class="form_grupo" id="form_Nombre">
+                <input type="text" name="Nombre_y_Apellidos" placeholder="Nombre y apellidos" class="controls" id="Nombre">
+                <p class="form_mensaje-error">El nombre solo puede contener letras, espacios y maximo 40 caracteres</p>
+            </div>    
+
+        <select name="Curso" id="Curso" class="controls">
+
+            <option value="901">901</option>
+            <option value="902">902</option>
+            <option value="903">903</option>
+            <option value="904">904</option>
+            <option value="905">905</option>
+            <option value="906">906</option>
+            <option value="1001">1001</option>
+            <option value="1002">1002</option>
+            <option value="1003">1003</option>
+            <option value="1004">1004</option>
+            <option value="1005">1005</option>
+            <option value="1101">1101</option>
+            <option value="1102">1102</option>
+            <option value="1103">1103</option>
+            <option value="1104">1104</option>
+        </select>
+        
+          <select name="Jornada" id="Profe" class="controls">
+            <option value="mañana" >Mañana</option>
+            <option value="tarde"  >Tarde</option>
+          </select>
+
+        <div class="form_grupo" id="form_Documento">
+            <input type="text" name="Documento_de_identidad" placeholder="Documento de identidad"  class="controls" id="Documento">
+            <p class="form_mensaje-error">El Documento solo puede contener numeros y maximo 10 numeros</p>        
+        </div>
+
+        <div class="form_grupo" id="Usuario">
+            <input type="hidden" name="Usuario" class="controls" value="Estudiante">
+            <p class="form_mensaje-error">El Documento solo puede contener numeros y maximo 10 numeros</p>        
+        </div>
+            
+        <div class="form_grupo" id="form_Contra">
+            <input type="password" name="Contrasena" id="Contra" class="controls" placeholder="Digite su contraseña">
+            <p class="form_mensaje-error">La contraseña debe tener letras mayusculas y minusculas, numeros y simbolos, en este orden</p>   
+        </div>
+
+        <div class="form_grupo" id="form_contra2">
+            <input type="password" name="Confirmacion" id="contra2" class="controls" placeholder="Confirme su contraseña">
+            <p class="form_mensaje-error">Las contraseñas deben coincidir</p>
+        </div>
+        
+        <button type="submit" name="boton" class="btn-neon">Registrate</button><br><br>
+        <p><a href="{% url 'Inicio_sesion' %}">¿Ya tienes cuenta?</a></p>
+    </form>
+</center>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,743 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <meta name="viewport" content="width=divice-width, initial-scale=1.0">
+    <title>Profesor</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/todo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Estudiante.css' %}">
+</head>
+
+<body>
+<div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="title">
+                            <p>Nombre</p>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="Cronograma">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Cronograma de actividades</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                        <span class="title">Estudiantes</span>
+                    </a>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="hammer-outline"></ion-icon></ion-icon></span>
+                        <span class="title">Herramientas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="hammer-outline"></ion-icon></ion-icon></span>
+                        <span class="title">Prestamo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="add-circle-outline"></ion-icon></span>
+                        <span class="title">Actividades</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="php/cerrar.php">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <span class="title">Cerrar</span>
+                    </a>
+                </li>
+        </div>
+
+        <!--main-->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+            </div>
+            
+<div class="cronograma" id="cronograma">
+                <center>
+                    <h4>Cronograma de actividades</h4>
+                    <div class="recentCustomers">
+                        <div><a id="boton" onclick="mostrar1();" class="boton1" href="#zona1">Zona 1</a></div>
+                        <div><a id="boton" onclick="mostrar2();" class="boton1" href="#zona2">Zona 2</a></div>
+                        <div><a id="boton" onclick="mostrar3();" class="boton2" href="#zona3">Zona 3</a></div>
+                        <div><a id="boton" onclick="mostrar4();" class="boton2" href="#zona4">Zona 4</a></div>
+
+                    </div> <br><br>
+
+                    <!--lo q desaparese y vuelve-->
+
+                    <div class="zona" id="zona1">
+                        <h4>Zona 1</h4>
+                        <table class="no1">
+                            <thead>
+                                <tr class="trr">
+                                    <td class="tdt">No</td>
+                                    <td class="tdt">Tiempo</td>
+                                    <td class="tdt">Actividades</td>
+                                </tr>
+                            </thead>
+                                <tbody>
+                                    <form action="">
+                                        <tr class="trr">
+                                            <td class="tdt"></td>
+                                            <td class="tdt"></td>
+                                            <td class="tdt"></td>
+                                        </tr>
+                                    </form>
+                    </div>
+            <!-- </div> -->
+
+
+        </tbody>
+        </table>
+        <button id="botton" onclick="ocultar1();" class="Cerrar">Cerrar</button>
+        <!-- </div> -->
+
+        <div class="zona" id="zona2">
+            <h4>Zona 2</h4>
+            <table class="no1">
+                <thead>
+                    <tr class="trr">
+                        <td class="tdt">No</td>
+                        <td class="tdt">Tiempo</td>
+                        <td class="tdt">Actividades</td>
+                    </tr>
+                </thead>
+
+                    <tbody>
+                        <form action="">
+                            <tr class="trr">
+                                <td class="tdt"></td>
+                                <td class="tdt"></td>
+                                <td class="tdt"></td>
+                            </tr>
+                        </form>
+                </div>
+            <!-- </div> -->
+        </tbody>
+        </table>
+        <button id="botton" onclick="ocultar2();" class="Cerrar">Cerrar</button>
+        <!-- </div> -->
+        <div class="zona" id="zona3">
+            <h4>Zona 3</h4>
+            <table class="no1">
+                <thead>
+                    <tr class="trr">
+                        <td class="tdt">No</td>
+                        <td class="tdt">Tiempo</td>
+                        <td class="tdt">Actividades</td>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <form action="">
+                            <tr class="trr">
+                                <td class="tdt"></td>
+                                <td class="tdt"></td>
+                                <td class="tdt"></td>
+                            </tr>
+                        </form>
+        </div>
+        <!-- </div> -->
+
+        </tbody>
+        </table>
+        <button id="botton" onclick="ocultar3();" class="Cerrar">Cerrar</button>
+        <!-- </div> -->
+        <div class="zona" id="zona4">
+            <h4>Zona 4</h4>
+            <table class="no1">
+                <thead>
+                    <tr class="trr">
+                        <td class="tdt">No</td>
+                        <td class="tdt">Tiempo</td>
+                        <td class="tdt">Actividades</td>
+                    </tr>
+                </thead>
+
+                    <tbody>
+                        <form action="">
+                            <tr class="trr">
+                                <td class="tdt"></td>
+                                <td class="tdt"></td>
+                                <td class="tdt"></td>
+                            </tr>
+                        </form>
+        </div>
+        <!-- </div> -->
+        </tbody>
+        </table>
+        <button id="botton" onclick="ocultar4();" class="Cerrar">Cerrar</button>
+        <!-- </div> -->
+
+        </center>
+
+
+</div>
+
+
+<!-- <div class="estudiantes" id="estudiantes">
+    <div class="details1">
+        <div class="recentOrders">
+            <div class="listado_est" id="listado_est">
+                <div class="cardHeader">
+                    <h2>Lista Estudiantes</h2>
+                    <div class="list">
+                        <form action="php/borrarVarios.php" method="POST">
+                            <div class="navigation5">
+                                <a class="button" href="#" onclick="mostrar10();"><i class="fa-solid fa-brush"></i></a>
+                                <button type="submit" class="button" name="btnDel"><i class="fa-solid fa-trash"></i></button>
+                                <a class="button" id="open" href="nuevo.php"><i class="fa-solid fa-add"></i></a>
+
+                            </div>
+
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>X</td>
+                            <td>Nombre y Apellido</td>
+                            <td>Documento</td>
+                            <td>Curso</td>
+                            <td>Jornada</td>
+                            <td>Horas</td>
+
+                            <td>CRUD</td>
+                            <td>CRUD</td>
+                        </tr>
+                    </thead>
+                    <?php
+
+                    $sql = " SELECT * FROM usuario WHERE rol_idrol='1' ORDER BY Nombre_y_Apellidos";
+                    $datos = mysqli_query($con, $sql);
+
+
+
+                    while ($campo = mysqli_fetch_assoc($datos)) {
+
+                    ?>
+                        <form method="POST" action="php/modificar_est.php">
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" name="seleccion[]" value="<?php echo $campo['idregistro'] ?>"></td>
+                        </form>
+                        <td><?php echo $campo['Nombre_y_Apellidos'] ?></td>
+                        <td><?php echo $campo['Documento_de_identidad'] ?></td>
+                        <td><?php echo $campo['curso'] ?></td>
+                        <td><?php echo $campo['jornada'] ?></td>
+                        <td><?php echo $campo['Horas'] ?></td>
+
+                        <td>
+                            <a class="si" href="php/modificar_est.php?id=<?php echo $campo['Documento_de_identidad'] ?>">Actualizar</a>
+                        </td>
+                        <td>
+                            <a class="si" href="php/eliminar_est.php?id=<?php echo $campo['Documento_de_identidad'] ?>">Borrar</a>
+                        </td>
+
+
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                    </tbody>
+                </table>
+                </form>
+            </div>
+            <div class="listado_act" id="listado_act">
+                <div class="cardHeader">
+                    <center>
+                        <h2>Lista Estudiantes</h2>
+                    </center>
+                    <div class="list">
+                        <div class="navigation2">
+
+                            <button class="button" id="open2"><i class="fa-solid fa-add"></i></button>
+
+                            <div class="modal-container2" id="modal_container2">
+                                <div class="modal">
+                                    <form action="php/almacenarDatosUsuario.php" method="POST" name="formDatosPersonales" id="formReg" class="form-register">
+
+                                        <center>
+                                            <h5>Formulario de registro</h5>
+
+                                            <input text="text" id="codigo" name="Nombre_y_Apellidos" required class="controls" placeholder="Nombre y apellidos">
+
+                                            <select name="Curso" id="nombre" class="controls">
+                                                <option value="901">901</option>
+                                                <option value="902">902</option>
+                                                <option value="903">903</option>
+                                                <option value="904">904</option>
+                                                <option value="905">905</option>
+                                                <option value="906">906</option>
+
+                                                <option value="1001">1001</option>
+                                                <option value="1002">1002</option>
+                                                <option value="1003">1003</option>
+                                                <option value="1004">1004</option>
+                                                <option value="1005">1005</option>
+
+                                                <option value="1101">1101</option>
+                                                <option value="1101">1102</option>
+                                                <option value="1101">1103</option>
+                                                <option value="1101">1104</option>
+                                            </select>
+                                            <select name="Jornada" id="Jornada" class="controls">
+                                                <option value="Mañana">Mañana</option>
+                                                <option value="Tarde">Tarde</option>
+                                            </select>
+                                            <input type="text" id="Documento" name="Documento_de_identidad" placeholder="Documento de identidad" class="controls" requiered>
+                                            <input type="text" id="nota" name="Contrasena" class="controls" placeholder="Digite su contraseña" required>
+                                            <input type="text" id="nota" name="Confirmacion" class="controls" placeholder="Confirme su contraseña" required>
+                                            <button id="boton" type="submit" name="boton" id="btn" class="btn-neon">REGISTRAR</button>
+                                    </form>
+                                    <br><br>
+                                    </center>
+
+                                    <a id="close2" class="cosa">Cerrar</a>
+                                </div>
+                            </div>
+
+
+
+
+                            <button id="open1" class="button"><i class="fa-solid fa-search"></i></button>
+
+                            <div class="modal-container1" id="modal_container1">
+                                <div class="modal">
+
+                                    <form method="POST" id="formReg">
+                                        <h1>FORMULARIO DE CONSULTA</h1>
+                                        <div class="input-container">
+
+                                            <select name="grupo" class="controls">
+                                                <option value="901">901</option>
+                                                <option value="902">902</option>
+                                                <option value="903">903</option>
+                                                <option value="904">904</option>
+                                                <option value="905">905</option>
+                                                <option value="906">906</option>
+
+                                                <option value="1001">1001</option>
+                                                <option value="1002">1002</option>
+                                                <option value="1003">1003</option>
+                                                <option value="1004">1004</option>
+                                                <option value="1005">1005</option>
+
+                                                <option value="1101">1101</option>
+                                                <option value="1101">1102</option>
+                                                <option value="1101">1103</option>
+                                                <option value="1101">1104</option>
+                                            </select>
+
+                                        </div>
+
+                                        <input type="submit" id="acceder" name="btnAcceder" class="btn-neon" value="CONSULTAR" onclick="mostrar12();">
+                                        <br><br>
+
+                                    </form>
+                                    <script>
+                                        $("#acceder").click(function() {
+                                            $.ajax({
+                                                url: "profesores.php",
+                                                type: "post",
+                                                data: $("formReg").serialize()
+                                            });
+                                        });
+                                    </script>
+                                    <a id="close1" class="cosa">Cerrar</a>
+                                </div>
+                            </div>
+
+                            <button class="button" href="#" onclick="mostrar11();"><i class="fa-solid fa-arrow-left"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <form method="POST">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>No</td>
+                                <td>Nombre y Apellido</td>
+                                <td>Curso</td>
+                                <td>Jornada</td>
+                                <td>Documento</td>
+                                <td>Horas</td>
+
+                            </tr>
+                        </thead>
+                        <?php
+                        if (isset($_POST['btnAcceder']) && $_POST['grupo'] != "") {
+
+                            $grupo = $_POST['grupo'];
+
+                            $sqlMod = " SELECT * FROM usuario WHERE curso ='$grupo' AND rol_idrol='1' ORDER BY Nombre_y_Apellidos";
+                            $datosMod = mysqli_query($con, $sqlMod);
+                            while ($campoMod = mysqli_fetch_assoc($datosMod)) {
+
+
+                        ?>
+                                <div id="resultado">
+                                    <tbody>
+                                        <tr>
+
+                                            <td><input name="idregistro[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['idregistro'] ?>" class="controlar"></td>
+                                            <td><input name="nom[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['Nombre_y_Apellidos'] ?>"></td>
+                                            <td><input name="curso[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['curso'] ?>" class="controlar"></td>
+                                            <td><input name="jor[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['jornada'] ?>" class="controlar"></td>
+                                            <td><input name="doc[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['Documento_de_identidad'] ?>" class="controlar"></td>
+                                            <td><input name="horas[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['Horas'] ?>" class="controlar"></td>
+                                        </tr>
+                                </div>
+                            <?php
+                            }
+                        } else {
+                            $sql2 = " SELECT * FROM usuario WHERE rol_idrol='1' ORDER BY Nombre_y_Apellidos";
+                            $datos2 = mysqli_query($con, $sql2);
+                            while ($campo2 = mysqli_fetch_assoc($datos2)) {
+
+
+                            ?>
+                                <tbody>
+                                    <tr>
+
+                                        <td><input name="idregistro[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['idregistro'] ?>" class="controlar"></td>
+                                        <td><input name="nom[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['Nombre_y_Apellidos'] ?>"></td>
+                                        <td><input name="curso[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['curso'] ?>" class="controlar"></td>
+                                        <td><input name="jor[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['jornada'] ?>" class="controlar"></td>
+                                        <td><input name="doc[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['Documento_de_identidad'] ?>" class="controlar"></td>
+                                        <td><input name="horas[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['Horas'] ?>" class="controlar"></td>
+                                    </tr>
+
+                            <?php
+                            }
+                        }
+
+                            ?>
+
+
+                            <tr>
+                                <td>
+                                    <input type="submit" class="si" name="btnCam" value="ACTUALIZAR" />
+                                </td>
+                            </tr>
+                                </tbody>
+                    </table>
+                </form>
+                <?php
+
+                if (isset($_POST['btnCam'])) {
+
+                    foreach ($_POST['idregistro'] as $id_cambio) {
+
+                        $editid = mysqli_real_escape_string($con, $_POST['idregistro'][$id_cambio]);
+                        $nomEs = mysqli_real_escape_string($con, $_POST['nom'][$id_cambio]);
+                        $cursoEs = mysqli_real_escape_string($con, $_POST['curso'][$id_cambio]);
+                        $jorEs = mysqli_real_escape_string($con, $_POST['jor'][$id_cambio]);
+                        $docEs = mysqli_real_escape_string($con, $_POST['doc'][$id_cambio]);
+                        $horasEs = mysqli_real_escape_string($con, $_POST['horas'][$id_cambio]);
+
+                        $actualizar = $con->query("UPDATE usuario SET idregistro='$editid', Nombre_y_Apellidos='$nomEs', curso='$cursoEs', jornada='$jorEs', Documento_de_identidad='$docEs', Horas='$horasEs' WHERE idregistro='$id_cambio'");
+                    }
+                    if ($actualizar == true) {
+                        echo '<script>
+                                alert("Se actualizo correctamente");
+                                window.history.go(-1);
+                              </script>';
+                    } else {
+                        echo '<script>
+                                alert("no se pudo");
+                                window.history.go(-1);
+                              </script>';
+                    }
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="prestamo" id="prestamo">
+    <div class="details2">
+        <div class="recentOrders1">
+            <div class="cardHeader">
+                <h2>Gestion de prestamo herramientas</h2>
+                <div class="list">
+
+                        <div class="navigation4">
+
+                                
+
+                            <a class="button" id="open4" href="#"><i class="fa-solid fa-add"></i></a>
+
+                            <div class="modal-container4" id="modal_container4">
+                                <div class="modal">
+                                    <form action="php/regPrestamo.php" method="POST" name="formDatos" id="formReg" class="form-register">
+
+                                        <center>
+                                            <h5>Formulario de registro</h5>
+
+                                            <input text="text" id="codigo" name="Nombre_y_Apellidos" required class="controls2" placeholder="Nombre y apellidos"><br><br>
+                                            <input type="text" id="nota" name="idHerramienta" class="controls2" placeholder="Codigo herramienta" required><br><br>
+                                            <input type="datetime-local" class="controls2" id="fecha" name="fechaPres"><br><br>
+                                            <button id="boton1" type="submit" name="boton1" id="btn" class="btn-neon">REGISTRAR</button>
+                                    </form>
+                                    <br><br>
+                                    </center>
+
+                                    <a id="close4" class="cosa">Cerrar</a>
+                                </div>
+                            </div>
+        <form action="php/act_Varios.php" method="POST">
+                            <button type="submit" class="button1" name="btnDel2"><i class="fa-solid fa-check"></i></button>
+                        </div>
+
+                </div>
+            </div>
+
+            <table class="no">
+                <thead>
+                    <tr>
+                        <td>X</td>
+                        <td>Nombre</td>
+                        <td>Estudiantes</td>
+                        <td>Estado</td>
+                        <td>Tiempo</td>
+                        <td>Gestion</td>
+                        <td>Gestion</td>
+
+                    </tr>
+                </thead>
+                <?php
+                $sql2 = " 
+                SELECT herramientasporusuario.idHerramientasUsuario, herramientasporusuario.herramienta_idHerramienta, herramienta.nombre_herramienta, usuario.Nombre_y_Apellidos, herramienta.estado, herramientasporusuario.fecha FROM herramientasporusuario
+                INNER JOIN herramienta
+                ON herramienta.idHerramienta = herramientasporusuario.herramienta_idHerramienta
+                INNER JOIN usuario
+                on usuario.idregistro = herramientasporusuario.usuario_idregistro;
+                                    ";
+                $datos2 = mysqli_query($con, $sql2);
+                while ($campo2 = mysqli_fetch_assoc($datos2)) {
+
+
+                ?>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" name="selecion[]" value="<?php echo $campo2['idHerramientasUsuario'] ?>"></td>
+                            <td><?php echo $campo2['nombre_herramienta'] ?></td>
+                            <td><?php echo $campo2['Nombre_y_Apellidos'] ?></td>
+                            <td><?php echo $campo2['estado'] ?></td>
+                            <td><?php echo $campo2['fecha'] ?></td>
+                            <td><a class="si" href="php/devolver.php?id=<?php echo $campo2['idHerramientasUsuario'] ?>">Devolver</a></td>
+                            <td><a class="si" href="php/prestar.php?id=<?php echo $campo2['idHerramientasUsuario'] ?>">Prestar</a></td>
+                        </tr>
+                    <?php
+                }
+                    ?>
+        </form>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="herramientas" id="herramientas">
+    <div class="details2">
+        <div class="recentOrders1">
+                <div class="cardHeader">
+                    <h2>Gestion de herramientas bodega</h2>
+                    <h6></h6>
+                    <div class="list">
+                        <div class="navigation3">
+                            <button id="open3" class="button"><i class="fa-solid fa-add"></i></button>
+
+                            <div class="modal-container3" id="modal_container3">
+                                <div class="modal">
+
+                                    <form action="php/regHer.php" method="POST" name="formDatosPersonales" id="formReg1" class="form_register">
+
+                                        <h5>Gestion Herramientas</h5>
+
+                                        <div class="form_Nombre" id="form_Nombre">
+                                            <input type="text" name="nombre_herramienta" placeholder="nombre de la Herramienta" class="controls" id="Nombre">
+                                        </div>
+
+                                        <div class="form_estado" id="form_estado">
+                                            <select name="estado" id="estado" class="controls">
+                                                <option value="Bueno">Bueno</option>
+                                                <option value="Malo">Malo</option>
+                                                <option value="Medio">Medio</option>
+                                            </select>
+                                            <input type="hidden" value="No" name="total">
+                                        </div>
+                                        <input type="submit" name="boton" class="btn-neon" value="Registrar">
+                                        <br><br>
+                                    </form>
+                                    <a id="close3" class="cosa">Cerrar</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="container1">
+                    <div class="images">
+                        <table class="no">
+                            <thead>
+                                <tr>
+                                    <td>No</td>
+                                    <td>Nombre</td>
+                                    <td>Estado</td>
+                                    <td>Gestion</td>
+                                    <td>Gestion</td>
+                                </tr>
+                            </thead>
+                            <?php
+
+                            $sql1 = " SELECT * FROM herramienta WHERE Total='no' ORDER BY nombre_herramienta";
+                            $datos1 = mysqli_query($con, $sql1);
+                            while ($campo = mysqli_fetch_assoc($datos1)) {
+
+
+                            ?>
+                                <tbody>
+                                    <tr>
+                                        <td><?php echo $campo['idHerramienta'] ?></td>
+                                        <td><?php echo $campo['nombre_herramienta'] ?></td>
+                                        <td><?php echo $campo['estado'] ?></td>
+                                        <td><a class="si" style="background-color: green;" href="php/modificarHerra.php?id=<?php echo $campo['idHerramienta'] ?>">Actualizar</a></td>
+                                        <td><a class="si" style="background-color: red;" href="php/eliminarHerra.php?id=<?php echo $campo['idHerramienta'] ?>">Borrar</a></td>
+                                    </tr>
+                                <?php
+                            }
+                                ?>
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="actividades" id="actividades">
+    <div class="details3">
+        <div class="recentOrders">
+            <div class="cardHeader">
+                <center>
+                    <h2>Actividades</h2>
+                </center>
+                <div class="list">
+                    <div class="navigation1">
+                        <button class="button" id="open5"><i class="fa-solid fa-add"></i></button>
+
+                        <div class="modal-container5" id="modal_container5">
+                            <div class="modal">
+                                <form action="php/regCro.php" method="POST" name="formDatosPersonales" id="formReg" class="form-register">
+
+                                    <center>
+                                        <h5>Formulario de actividades</h5>
+
+                                        <div class="form_grupo" id="form_Nombre">
+                                            <input type="text" name="actividad" class="controls" placeholder="actividad" id="actividad"><br>
+                                            <input type="date" name="fechaEntrega" class="controls" id="fechaEntrega"><br>
+                                            <select name="zona_idzona" id="zona_idzona" class="controls">
+                                                <option value="1">Zona 1</option>
+                                                <option value="2">Zona 2</option>
+                                                <option value="3">Zona 3</option>
+                                                <option value="4">Zona 4</option>
+                                            </select>
+                                        </div>
+
+                                        <input type="submit" name="boton3" class="btn-neon" value="Registrate">
+
+                                </form>
+                                </center>
+                                <a id="close5" class="cosa">Cerrar</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <form method="POST">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>No</td>
+                            <td>Tiempo</td>
+                            <td>Zona</td>
+                            <td>actividad</td>
+
+                        </tr>
+                    </thead>
+                    <?php
+
+                    $sqlMod = " SELECT * FROM cronograma_actividades ORDER BY zona_idzona";
+                    $datosMod = mysqli_query($con, $sqlMod);
+
+                    while ($campoMod = mysqli_fetch_assoc($datosMod)) {
+                    ?>
+                        <tbody>
+                            <tr>
+                                <td><input name="idcro[<?php echo $campoMod['idcro'] ?>]" value="<?php echo $campoMod['idcro'] ?>" class="controlar"></td>
+                                <td><input type="datetime" name="fechaEntrega[<?php echo $campoMod['idcro'] ?>]" value="<?php echo $campoMod['fechaEntrega'] ?>" class="controlar1"></td>
+                                <td><input name="zona_idzona[<?php echo $campoMod['idcro'] ?>]" value="<?php echo $campoMod['zona_idzona'] ?>" class="controlar"></td>
+                                <td><input name="actividad[<?php echo $campoMod['idcro'] ?>]" value="<?php echo $campoMod['actividad'] ?>" class="controlar"></td>
+                            </tr>
+                        <?php
+                    }
+                        ?>
+                        <tr>
+                            <td>
+                                <input type="submit" class="si" name="btnCam1" value="ACTUALIZAR" />
+                            </td>
+                        </tr>
+                        </tbody>
+                </table>
+            </form>
+            <?php
+
+            if (isset($_POST['btnCam1'])) {
+
+                foreach ($_POST['idcro'] as $id_cambio) {
+
+                    $editid = mysqli_real_escape_string($con, $_POST['idcro'][$id_cambio]);
+                    $fechaEntrega = mysqli_real_escape_string($con, $_POST['fechaEntrega'][$id_cambio]);
+                    $zona_idzona = mysqli_real_escape_string($con, $_POST['zona_idzona'][$id_cambio]);
+                    $actividad = mysqli_real_escape_string($con, $_POST['actividad'][$id_cambio]);
+
+                    $actualizar = $con->query("UPDATE cronograma_actividades SET fechaEntrega='$fechaEntrega', zona_idzona='$zona_idzona', actividad='$actividad' WHERE idcro='$id_cambio'");
+                }
+
+                if ($actualizar === true) {
+                    echo '<script>
+                                        alert("Se a actualizado correctamente");
+                                        location.href = "profesores.php";
+                                    </script>';
+                } else {
+                    echo '<script>
+                                        alert("no se pudo");
+                                        location.href = "profesores.php";
+                                    </script>';
+                }
+            }
+            ?>
+        </div>
+    </div>
+</div> -->
