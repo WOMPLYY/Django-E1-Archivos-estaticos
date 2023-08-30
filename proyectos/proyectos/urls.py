@@ -16,9 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
-from django.contrib import admin
-from django.urls import path
 from . import views
 
 urlpatterns = [
@@ -26,5 +23,14 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('Inicio_sesion/', views.Inicio_sesion, name='Inicio_sesion'),
     path('form_registro/', views.form_registro, name='form_registro'),
-    path('profesores/', views.profesores, name='profesores')
+    path('profesores/', views.profesores, name='profesores'),
+    path('actividades/', views.actividades, name='actividades'),
+    path('aprende/', views.aprende, name='aprende'),
+    path('estudiantes/', views.estudiantes, name='estudiantes'),
+    path('form_reg_Profesores/', views.form_reg_Profesores, name='form_reg_Profesores'),
+    path('formPrestar/', views.formPrestar, name='formPrestar'),
+    path('info/', views.info, name='info'),
+    path('nuevo/', views.nuevo, name='nuevo'),
+    path('perfil/', views.perfil, name='perfil'),
+    path('pruebas/', views.pruebas, name='pruebas'),
 ]

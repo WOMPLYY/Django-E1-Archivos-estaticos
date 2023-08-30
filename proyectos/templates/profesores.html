@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +6,6 @@
     <meta charset=utf-8 />
     <meta name="viewport" content="width=divice-width, initial-scale=1.0">
     <title>Profesor</title>
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/todo.css' %}">
     <link rel="stylesheet" href="{% static 'css/Estudiante.css' %}">
 </head>
@@ -191,18 +190,18 @@
 </div>
 
 
-<!-- <div class="estudiantes" id="estudiantes">
+<div class="estudiantes" id="estudiantes">  
     <div class="details1">
         <div class="recentOrders">
             <div class="listado_est" id="listado_est">
                 <div class="cardHeader">
                     <h2>Lista Estudiantes</h2>
                     <div class="list">
-                        <form action="php/borrarVarios.php" method="POST">
+                        <form action="" method="POST">
                             <div class="navigation5">
                                 <a class="button" href="#" onclick="mostrar10();"><i class="fa-solid fa-brush"></i></a>
                                 <button type="submit" class="button" name="btnDel"><i class="fa-solid fa-trash"></i></button>
-                                <a class="button" id="open" href="nuevo.php"><i class="fa-solid fa-add"></i></a>
+                                <a class="button" id="open" href="{% url 'nuevo' %}"><i class="fa-solid fa-add"></i></a>
 
                             </div>
 
@@ -222,39 +221,28 @@
                             <td>CRUD</td>
                         </tr>
                     </thead>
-                    <?php
-
-                    $sql = " SELECT * FROM usuario WHERE rol_idrol='1' ORDER BY Nombre_y_Apellidos";
-                    $datos = mysqli_query($con, $sql);
-
-
-
-                    while ($campo = mysqli_fetch_assoc($datos)) {
-
-                    ?>
-                        <form method="POST" action="php/modificar_est.php">
+                    
+                        <form method="POST" action="">
                             <tbody>
                                 <tr>
-                                    <td><input type="checkbox" name="seleccion[]" value="<?php echo $campo['idregistro'] ?>"></td>
+                                    <td><!--<input type="checkbox" name="seleccion[]" value="<?php echo $campo['idregistro'] ?>">--></td>
                         </form>
-                        <td><?php echo $campo['Nombre_y_Apellidos'] ?></td>
-                        <td><?php echo $campo['Documento_de_identidad'] ?></td>
-                        <td><?php echo $campo['curso'] ?></td>
-                        <td><?php echo $campo['jornada'] ?></td>
-                        <td><?php echo $campo['Horas'] ?></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
 
                         <td>
-                            <a class="si" href="php/modificar_est.php?id=<?php echo $campo['Documento_de_identidad'] ?>">Actualizar</a>
+                            <a class="si" href="">Actualizar</a>
                         </td>
                         <td>
-                            <a class="si" href="php/eliminar_est.php?id=<?php echo $campo['Documento_de_identidad'] ?>">Borrar</a>
+                            <a class="si" href="">Borrar</a>
                         </td>
 
 
                         </tr>
-                    <?php
-                    }
-                    ?>
+
                     </tbody>
                 </table>
                 </form>
@@ -271,7 +259,7 @@
 
                             <div class="modal-container2" id="modal_container2">
                                 <div class="modal">
-                                    <form action="php/almacenarDatosUsuario.php" method="POST" name="formDatosPersonales" id="formReg" class="form-register">
+                                    <form action="" method="POST" name="formDatosPersonales" id="formReg" class="form-register">
 
                                         <center>
                                             <h5>Formulario de registro</h5>
@@ -351,15 +339,7 @@
                                         <br><br>
 
                                     </form>
-                                    <script>
-                                        $("#acceder").click(function() {
-                                            $.ajax({
-                                                url: "profesores.php",
-                                                type: "post",
-                                                data: $("formReg").serialize()
-                                            });
-                                        });
-                                    </script>
+
                                     <a id="close1" class="cosa">Cerrar</a>
                                 </div>
                             </div>
@@ -381,55 +361,30 @@
 
                             </tr>
                         </thead>
-                        <?php
-                        if (isset($_POST['btnAcceder']) && $_POST['grupo'] != "") {
 
-                            $grupo = $_POST['grupo'];
-
-                            $sqlMod = " SELECT * FROM usuario WHERE curso ='$grupo' AND rol_idrol='1' ORDER BY Nombre_y_Apellidos";
-                            $datosMod = mysqli_query($con, $sqlMod);
-                            while ($campoMod = mysqli_fetch_assoc($datosMod)) {
-
-
-                        ?>
                                 <div id="resultado">
                                     <tbody>
                                         <tr>
 
-                                            <td><input name="idregistro[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['idregistro'] ?>" class="controlar"></td>
-                                            <td><input name="nom[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['Nombre_y_Apellidos'] ?>"></td>
-                                            <td><input name="curso[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['curso'] ?>" class="controlar"></td>
-                                            <td><input name="jor[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['jornada'] ?>" class="controlar"></td>
-                                            <td><input name="doc[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['Documento_de_identidad'] ?>" class="controlar"></td>
-                                            <td><input name="horas[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['Horas'] ?>" class="controlar"></td>
+                                            <td><!--<input name="idregistro[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['idregistro'] ?>" class="controlar">--></td>
+                                            <td><!--<input name="nom[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['Nombre_y_Apellidos'] ?>">--></td>
+                                            <td><!--<input name="curso[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['curso'] ?>" class="controlar">--></td>
+                                            <td><!--<input name="jor[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['jornada'] ?>" class="controlar">--></td>
+                                            <td><!--<input name="doc[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['Documento_de_identidad'] ?>" class="controlar">--></td>
+                                            <td><!--<input name="horas[<?php echo $campoMod['idregistro'] ?>]" value="<?php echo $campoMod['Horas'] ?>" class="controlar">--></td>
                                         </tr>
                                 </div>
-                            <?php
-                            }
-                        } else {
-                            $sql2 = " SELECT * FROM usuario WHERE rol_idrol='1' ORDER BY Nombre_y_Apellidos";
-                            $datos2 = mysqli_query($con, $sql2);
-                            while ($campo2 = mysqli_fetch_assoc($datos2)) {
 
-
-                            ?>
                                 <tbody>
                                     <tr>
 
-                                        <td><input name="idregistro[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['idregistro'] ?>" class="controlar"></td>
-                                        <td><input name="nom[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['Nombre_y_Apellidos'] ?>"></td>
-                                        <td><input name="curso[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['curso'] ?>" class="controlar"></td>
-                                        <td><input name="jor[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['jornada'] ?>" class="controlar"></td>
-                                        <td><input name="doc[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['Documento_de_identidad'] ?>" class="controlar"></td>
-                                        <td><input name="horas[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['Horas'] ?>" class="controlar"></td>
+                                        <td><!--<input name="idregistro[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['idregistro'] ?>" class="controlar">--></td>
+                                        <td><!--<input name="nom[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['Nombre_y_Apellidos'] ?>">--></td>
+                                        <td><!--<input name="curso[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['curso'] ?>" class="controlar">--></td>
+                                        <td><!--<input name="jor[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['jornada'] ?>" class="controlar">--></td>
+                                        <td><!--<input name="doc[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['Documento_de_identidad'] ?>" class="controlar">--></td>
+                                        <td><!--<input name="horas[<?php echo $campo2['idregistro'] ?>]" value="<?php echo $campo2['Horas'] ?>" class="controlar">--></td>
                                     </tr>
-
-                            <?php
-                            }
-                        }
-
-                            ?>
-
 
                             <tr>
                                 <td>
@@ -439,34 +394,7 @@
                                 </tbody>
                     </table>
                 </form>
-                <?php
 
-                if (isset($_POST['btnCam'])) {
-
-                    foreach ($_POST['idregistro'] as $id_cambio) {
-
-                        $editid = mysqli_real_escape_string($con, $_POST['idregistro'][$id_cambio]);
-                        $nomEs = mysqli_real_escape_string($con, $_POST['nom'][$id_cambio]);
-                        $cursoEs = mysqli_real_escape_string($con, $_POST['curso'][$id_cambio]);
-                        $jorEs = mysqli_real_escape_string($con, $_POST['jor'][$id_cambio]);
-                        $docEs = mysqli_real_escape_string($con, $_POST['doc'][$id_cambio]);
-                        $horasEs = mysqli_real_escape_string($con, $_POST['horas'][$id_cambio]);
-
-                        $actualizar = $con->query("UPDATE usuario SET idregistro='$editid', Nombre_y_Apellidos='$nomEs', curso='$cursoEs', jornada='$jorEs', Documento_de_identidad='$docEs', Horas='$horasEs' WHERE idregistro='$id_cambio'");
-                    }
-                    if ($actualizar == true) {
-                        echo '<script>
-                                alert("Se actualizo correctamente");
-                                window.history.go(-1);
-                              </script>';
-                    } else {
-                        echo '<script>
-                                alert("no se pudo");
-                                window.history.go(-1);
-                              </script>';
-                    }
-                }
-                ?>
             </div>
         </div>
     </div>
@@ -487,7 +415,7 @@
 
                             <div class="modal-container4" id="modal_container4">
                                 <div class="modal">
-                                    <form action="php/regPrestamo.php" method="POST" name="formDatos" id="formReg" class="form-register">
+                                    <form action="" method="POST" name="formDatos" id="formReg" class="form-register">
 
                                         <center>
                                             <h5>Formulario de registro</h5>
@@ -503,7 +431,7 @@
                                     <a id="close4" class="cosa">Cerrar</a>
                                 </div>
                             </div>
-        <form action="php/act_Varios.php" method="POST">
+        <form action="" method="POST">
                             <button type="submit" class="button1" name="btnDel2"><i class="fa-solid fa-check"></i></button>
                         </div>
 
@@ -523,32 +451,18 @@
 
                     </tr>
                 </thead>
-                <?php
-                $sql2 = " 
-                SELECT herramientasporusuario.idHerramientasUsuario, herramientasporusuario.herramienta_idHerramienta, herramienta.nombre_herramienta, usuario.Nombre_y_Apellidos, herramienta.estado, herramientasporusuario.fecha FROM herramientasporusuario
-                INNER JOIN herramienta
-                ON herramienta.idHerramienta = herramientasporusuario.herramienta_idHerramienta
-                INNER JOIN usuario
-                on usuario.idregistro = herramientasporusuario.usuario_idregistro;
-                                    ";
-                $datos2 = mysqli_query($con, $sql2);
-                while ($campo2 = mysqli_fetch_assoc($datos2)) {
 
-
-                ?>
                     <tbody>
                         <tr>
-                            <td><input type="checkbox" name="selecion[]" value="<?php echo $campo2['idHerramientasUsuario'] ?>"></td>
-                            <td><?php echo $campo2['nombre_herramienta'] ?></td>
-                            <td><?php echo $campo2['Nombre_y_Apellidos'] ?></td>
-                            <td><?php echo $campo2['estado'] ?></td>
-                            <td><?php echo $campo2['fecha'] ?></td>
-                            <td><a class="si" href="php/devolver.php?id=<?php echo $campo2['idHerramientasUsuario'] ?>">Devolver</a></td>
-                            <td><a class="si" href="php/prestar.php?id=<?php echo $campo2['idHerramientasUsuario'] ?>">Prestar</a></td>
+                            <td><input type="checkbox" name="selecion[]" value=""></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><a class="si" href="">Devolver</a></td>
+                            <td><a class="si" href="">Prestar</a></td>
                         </tr>
-                    <?php
-                }
-                    ?>
+
         </form>
                     </tbody>
             </table>
@@ -569,7 +483,7 @@
                             <div class="modal-container3" id="modal_container3">
                                 <div class="modal">
 
-                                    <form action="php/regHer.php" method="POST" name="formDatosPersonales" id="formReg1" class="form_register">
+                                    <form action="" method="POST" name="formDatosPersonales" id="formReg1" class="form_register">
 
                                         <h5>Gestion Herramientas</h5>
 
@@ -608,25 +522,16 @@
                                     <td>Gestion</td>
                                 </tr>
                             </thead>
-                            <?php
 
-                            $sql1 = " SELECT * FROM herramienta WHERE Total='no' ORDER BY nombre_herramienta";
-                            $datos1 = mysqli_query($con, $sql1);
-                            while ($campo = mysqli_fetch_assoc($datos1)) {
-
-
-                            ?>
                                 <tbody>
                                     <tr>
-                                        <td><?php echo $campo['idHerramienta'] ?></td>
-                                        <td><?php echo $campo['nombre_herramienta'] ?></td>
-                                        <td><?php echo $campo['estado'] ?></td>
-                                        <td><a class="si" style="background-color: green;" href="php/modificarHerra.php?id=<?php echo $campo['idHerramienta'] ?>">Actualizar</a></td>
-                                        <td><a class="si" style="background-color: red;" href="php/eliminarHerra.php?id=<?php echo $campo['idHerramienta'] ?>">Borrar</a></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a class="si" style="background-color: green;" href="">Actualizar</a></td>
+                                        <td><a class="si" style="background-color: red;" href="">Borrar</a></td>
                                     </tr>
-                                <?php
-                            }
-                                ?>
+
                                 </tbody>
                         </table>
                     </div>
@@ -648,7 +553,7 @@
 
                         <div class="modal-container5" id="modal_container5">
                             <div class="modal">
-                                <form action="php/regCro.php" method="POST" name="formDatosPersonales" id="formReg" class="form-register">
+                                <form action="" method="POST" name="formDatosPersonales" id="formReg" class="form-register">
 
                                     <center>
                                         <h5>Formulario de actividades</h5>
@@ -686,23 +591,15 @@
 
                         </tr>
                     </thead>
-                    <?php
 
-                    $sqlMod = " SELECT * FROM cronograma_actividades ORDER BY zona_idzona";
-                    $datosMod = mysqli_query($con, $sqlMod);
-
-                    while ($campoMod = mysqli_fetch_assoc($datosMod)) {
-                    ?>
                         <tbody>
                             <tr>
-                                <td><input name="idcro[<?php echo $campoMod['idcro'] ?>]" value="<?php echo $campoMod['idcro'] ?>" class="controlar"></td>
-                                <td><input type="datetime" name="fechaEntrega[<?php echo $campoMod['idcro'] ?>]" value="<?php echo $campoMod['fechaEntrega'] ?>" class="controlar1"></td>
-                                <td><input name="zona_idzona[<?php echo $campoMod['idcro'] ?>]" value="<?php echo $campoMod['zona_idzona'] ?>" class="controlar"></td>
-                                <td><input name="actividad[<?php echo $campoMod['idcro'] ?>]" value="<?php echo $campoMod['actividad'] ?>" class="controlar"></td>
+                                <td><!--<input name="idcro[<?php echo $campoMod['idcro'] ?>]" value="<?php echo $campoMod['idcro'] ?>" class="controlar">--></td>
+                                <td><!--<input type="datetime" name="fechaEntrega[<?php echo $campoMod['idcro'] ?>]" value="<?php echo $campoMod['fechaEntrega'] ?>" class="controlar1">--></td>
+                                <td><!--<input name="zona_idzona[<?php echo $campoMod['idcro'] ?>]" value="<?php echo $campoMod['zona_idzona'] ?>" class="controlar">--></td>
+                                <td><!--<input name="actividad[<?php echo $campoMod['idcro'] ?>]" value="<?php echo $campoMod['actividad'] ?>" class="controlar">--></td>
                             </tr>
-                        <?php
-                    }
-                        ?>
+
                         <tr>
                             <td>
                                 <input type="submit" class="si" name="btnCam1" value="ACTUALIZAR" />
@@ -711,33 +608,7 @@
                         </tbody>
                 </table>
             </form>
-            <?php
 
-            if (isset($_POST['btnCam1'])) {
-
-                foreach ($_POST['idcro'] as $id_cambio) {
-
-                    $editid = mysqli_real_escape_string($con, $_POST['idcro'][$id_cambio]);
-                    $fechaEntrega = mysqli_real_escape_string($con, $_POST['fechaEntrega'][$id_cambio]);
-                    $zona_idzona = mysqli_real_escape_string($con, $_POST['zona_idzona'][$id_cambio]);
-                    $actividad = mysqli_real_escape_string($con, $_POST['actividad'][$id_cambio]);
-
-                    $actualizar = $con->query("UPDATE cronograma_actividades SET fechaEntrega='$fechaEntrega', zona_idzona='$zona_idzona', actividad='$actividad' WHERE idcro='$id_cambio'");
-                }
-
-                if ($actualizar === true) {
-                    echo '<script>
-                                        alert("Se a actualizado correctamente");
-                                        location.href = "profesores.php";
-                                    </script>';
-                } else {
-                    echo '<script>
-                                        alert("no se pudo");
-                                        location.href = "profesores.php";
-                                    </script>';
-                }
-            }
-            ?>
         </div>
     </div>
-</div> -->
+</div>

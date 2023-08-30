@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="css/aprendes.css">-->
+    <link rel="stylesheet" href="{% static 'css/total12.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_Herramientas1.css' %}">
+    <title>Aprende</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <center>
+            <div class="search-box">
+                <form action="" method="POST">
+                    <input type="text" name="nombre" placeholder="Buscar">
+                    <input type="submit" name="btn" style="display:none;">
+                </form>
+            </div>
+        </center>
+        <div class="images" id="images">
+
+                    <div class="images2">
+                        <center>
+                            <div class="des" id="des">
+                                <a href="{% url 'info' %}">
+                                    <div class="image-box" data-name="si">
+                                        <img src="data:image/jpeg;base64,urlimagen">
+                                        <h6>planta</h6>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <center>
+                    </div>
+
+                    <div class="des" id="des">
+                        <a href="{% url 'info' %}" class="laa" onclick="mostrar1()">
+                            <div class="image-box" data-name="si">
+                                <img src="data:image/jpeg;base64,urlimagen">
+                                <h6>planta</h6>
+                            </div>
+                        </a>
+                    </div>
+
+        </div>
+</body>
+</html>
