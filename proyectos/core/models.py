@@ -8,7 +8,7 @@ from django.db import models
 #     def __str__(self):
 #         return self.name
 
-#     class meta:
+#     class Meta:
 #         verbose_name = 'categoria'
 #         verbose_name_plural = 'categorias'
 #         db_table = 'categoria'
@@ -23,7 +23,7 @@ from django.db import models
 #     def __str__(self):
 #         return self.name
 
-#     class meta:
+#     class Meta:
 #         verbose_name = 'Producto'
 #         verbose_name_plural = 'Productos'
 #         db_table = 'producto'
@@ -35,9 +35,9 @@ class Curso(models.Model):
     nombre_curso = models.CharField(max_length=5,verbose_name='Nombre del curso')
 
     def __str__(self):
-        return self.name
+        return self.codigo_curso
 
-    class meta:
+    class Meta:
         verbose_name = 'curso'
         verbose_name_plural = 'cursos'
         db_table = 'curso'
@@ -46,10 +46,11 @@ class Curso(models.Model):
 class Estado_herramienta(models.Model):
     # id_est_her = models.IntegerField(verbose_name='id del curso')
     nombre = models.CharField(max_length=25, verbose_name='Nombre')
-    def __str__(self):
-        return self.name
 
-    class meta:
+    def __str__(self):
+        return self.nombre
+
+    class Meta:
         verbose_name = 'estado_herramienta'
         verbose_name_plural = 'estado_herramientas'
         db_table = 'estado_herramienta'
@@ -61,9 +62,9 @@ class Rol(models.Model):
     descripcion = models.TextField(verbose_name='Descripcion del rol')
 
     def __str__(self):
-        return self.name
+        return self.nombre
 
-    class meta:
+    class Meta:
         verbose_name = 'rol'
         verbose_name_plural = 'roles'
         db_table = 'rol'
@@ -76,9 +77,9 @@ class Wiki(models.Model):
     referencias_web = models.TextField(verbose_name='Referencias web')
 
     def __str__(self):
-        return self.name
+        return self.nombre
 
-    class meta:
+    class Meta:
         verbose_name = 'wiki'
         verbose_name_plural = 'wikis'
         db_table = 'wiki'
@@ -90,15 +91,15 @@ class Zona(models.Model):
     descripcion = models.TextField(verbose_name='Descripcion de la zona')
 
     def __str__(self):
-        return self.name
+        return self.nombre
 
-    class meta:
+    class Meta:
         verbose_name = 'zona'
         verbose_name_plural = 'zonas'
         db_table = 'zona'
         ordering = ['id']
 #6 ------tabla-debil----------------------------------------------------------------------------------------------
-class Inventario_herramientas(models.Model):
+class Inventario_herramienta(models.Model):
     # id_inv_her = models.IntegerField(verbose_name='id del inventario de la herramieta'
     nombre = models.CharField(max_length=25, verbose_name='Nombre')
     class Disponibilidad(models.TextChoices):
@@ -108,20 +109,19 @@ class Inventario_herramientas(models.Model):
     Estado_herramienta = models.ForeignKey(Estado_herramienta, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return self.nombre
 
-    class meta:
+    class Meta:
         verbose_name = 'inventario_herramienta'
         verbose_name_plural = 'inventario_herramientas'
-        db_table = 'inventario_herramientas'
+        db_table = 'inventario_herramienta'
         ordering = ['id']
 #7 --------tabla-debil--------------------------------------------------------------------------------------------
 class Asistencia(models.Model):
     # id_asistencia = models.IntegerField(verbose_name='Asistencia')
     class Estado(models.TextChoices):
-        BUENO = "bueno"
-        REGULAR = "regular"
-        MALO = "malo"
+        BUENO = "asistio"
+        REGULAR = "no asistio"
     estado = models.CharField(choices=Estado.choices,max_length=20, verbose_name='Estado')
     fecha_asistencia = models.DateField(verbose_name='Fecha_asistencia')
     horas = models.IntegerField(verbose_name='Horas')
@@ -129,9 +129,9 @@ class Asistencia(models.Model):
     # Users = models.ForeignKey(Users, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name  
+        return self.estado
 
-    class meta:
+    class Meta:
         verbose_name = 'asistencia'
         verbose_name_plural = 'asistencias'
         db_table = 'asistencia'
@@ -145,33 +145,33 @@ class Labor_social(models.Model):
     Wiki = models.ForeignKey(Wiki, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return self.nombre
 
-    class meta:
+    class Meta:
         verbose_name = 'labor_social'
         verbose_name_plural = 'labores_sociales'
         db_table = 'labor_social'
         ordering = ['id']
 #9 ----------tabla-debil------------------------------------------------------------------------------------------
-class Cronograma_actividades(models.Model):
+class Cronograma_actividad(models.Model):
     # id_cro_act = models.IntegerField(verbose_name='Cronograma')
-    fecha_inicio = models.DateField(verbose_name='Fecha de inicio')
-    fecha_fin = models.DateField(verbose_name='Fecha de fin')
+    fecha_inicio = models.DateField(verbose_name='Fecha_inicio')
+    fecha_fin = models.DateField(verbose_name='Fecha_fin')
     # id_labor_social = models.IntegerField(verbose_name='Actividad')
     # id_zona = models.IntegerField(verbose_name='Zona')
     Labor_social = models.ForeignKey(Labor_social, on_delete=models.CASCADE)
     Zona = models.ForeignKey(Zona, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return self.fecha_inicio
 
-    class meta:
+    class Meta:
         verbose_name = 'cronograma_actividad'
         verbose_name_plural = 'cronograma_actividades'
-        db_table = 'cronograma_actividades'
+        db_table = 'cronograma_actividad'
         ordering = ['id']
 #10 --------tabla-debil--------------------------------------------------------------------------------------------
-class Historico_herramientas(models.Model):
+class Historico_herramienta(models.Model):
     # id_his_her = models.IntegerField(verbose_name='Id de el historico')
     fecha_entrega = models.DateField(verbose_name='Fecha de entrega')
     fecha_devolucion = models.DateField(verbose_name='Fecha de devolucion')
@@ -182,16 +182,16 @@ class Historico_herramientas(models.Model):
     estado = models.CharField(choices=Estado.choices,max_length=20, verbose_name='Estado')
     # id_inv_her = models.IntegerField(verbose_name='Id del inventario de la herramienta')
     # id_usuario = models.IntegerField(verbose_name='Id del usuario')
-    Inventario_herramientas = models.ForeignKey(Inventario_herramientas, on_delete=models.CASCADE)
+    Inventario_herramienta = models.ForeignKey(Inventario_herramienta, on_delete=models.CASCADE)
     # Users = models.ForeignKey(Users, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return self.fecha_entrega
 
-    class meta:
+    class Meta:
         verbose_name = 'historico_herramienta'
         verbose_name_plural = 'historico_herramientas'
-        db_table = 'historico_herramientas'
+        db_table = 'historico_herramienta'
         ordering = ['id']
 #11 ----------------------------------------------------------------------------------------------------
 # class Usuario(models.Model):
@@ -215,7 +215,7 @@ class Historico_herramientas(models.Model):
 #     def __str__(self):
 #         return self.name
     
-#     class meta:
+#     class Meta:
 #         verbose_name = 'usuario'
 #         verbose_name_plural = 'usuarios'
 #         db_table = 'usuario'

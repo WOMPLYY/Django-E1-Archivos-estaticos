@@ -19,9 +19,22 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    
+    # Redirigir al admin
+    
+    #paso 1 Redirigir al admin = Cambiar el nombre de la ruta
+    #path('admin/', admin.site.urls, name='admin:index'),
+    path('admin/', admin.site.urls, name='admin:profesores'),
+    #fin paso 1 Redirigir al admin
+    #paso 2 Redirigir al admin = Cambiar el nombre de la ruta
+    #return redirect('admin:index')
+    #fin paso 2 Redirigir al admin
+
     path('', views.index, name='index'),
-    path('Inicio_sesion/', views.Inicio_sesion, name='Inicio_sesion'),
+    # paso 1 = LOGIN Crear la ruta en urls.py 
+    # path('login', views.login_view, name='login'),
+    #fin paso 1 LOGIN
+    path('Inicio_sesion/', views.login_view, name='Inicio_sesion'),
     path('form_registro/', views.form_registro, name='form_registro'),
     path('profesores/', views.profesores, name='profesores'),
     path('actividades/', views.actividades, name='actividades'),
