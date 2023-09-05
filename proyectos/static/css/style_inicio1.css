@@ -32,7 +32,7 @@ body
   width: 35%;
   background-color: var(--verde);
   padding: 20px 20px 10px 15px;
-  display: flex;
+  display: center;
   text-align: center;
   border-radius: 40px;
   font-family: 'calibri';

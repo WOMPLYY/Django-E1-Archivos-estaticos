@@ -24,7 +24,7 @@ urlpatterns = [
     
     #paso 1 Redirigir al admin = Cambiar el nombre de la ruta
     #path('admin/', admin.site.urls, name='admin:index'),
-    path('admin/', admin.site.urls, name='admin:profesores'),
+    path('admin/', admin.site.urls, name='admin:index'),
     #fin paso 1 Redirigir al admin
     #paso 2 Redirigir al admin = Cambiar el nombre de la ruta
     #return redirect('admin:index')
@@ -32,7 +32,7 @@ urlpatterns = [
 
     path('', views.index, name='index'),
     # paso 1 = LOGIN Crear la ruta en urls.py 
-    # path('login', views.login_view, name='login'),
+    # path('login/', views.login, name='login'),
     #fin paso 1 LOGIN
     path('Inicio_sesion/', views.login_view, name='Inicio_sesion'),
     path('form_registro/', views.form_registro, name='form_registro'),

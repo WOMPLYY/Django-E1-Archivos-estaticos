@@ -26,17 +26,17 @@ def index(request):
 #fin paso 3 LOGIN
 
 #paso 4 LOGIN = Cambiar la función login en views.py
-def Inicio_sesion(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+# def login_view(request):
+#     if request.method == 'POST':
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
 
-        print(username)
-        print(password)
+#         print(username)
+#         print(password)
 
-    return render(request, 'Inicio_sesion.html',{
+#     return render(request, 'Inicio_sesion.html',{
         
-    })
+#     })
 #fin paso 4 LOGIN
 
 #fin Login
@@ -49,21 +49,21 @@ def Inicio_sesion(request):
 #fin paso 1 Autenticación
 
 #paso 2 Autenticación = Utilizar la función para autenticación 
-def login_view(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+# def login_view(request):
+#     if request.method == 'POST':
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
 
-        user = authenticate(username=username, password=password)
-        if user:
-            login(request, user)
-            print("Usuario autenticado")
-        else:
-            print("Usuario no autenticado")
+#         user = authenticate(username=username, password=password)
+#         if user:
+#             login(request, user)
+#             print("Usuario autenticado")
+#         else:
+#             print("Usuario no autenticado")
 
-    return render(request, 'Inicio_sesion.html',{
+#     return render(request, 'Inicio_sesion.html',{
         
-    })
+#     })
 #fin paso 2 Autenticación
 
 # Redirect
@@ -76,19 +76,19 @@ def login_view(request):
 #agregar estas 2 librerias al inicio al lado de las demas
 # from django.contrib.auth import logout
 # from django.contrib import messages
-def login_view(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+# def login_view(request):
+#     if request.method == 'POST':
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
 
-        user = authenticate(username=username, password=password)
-        if user:
-            login(request, user)
-            return redirect('index') # Nombre url
+#         user = authenticate(username=username, password=password)
+#         if user:
+#             login(request, user)
+#             return redirect('index') # Nombre url
 
-    return render(request, 'Inicio_sesion.html',{
+#     return render(request, 'Inicio_sesion.html',{
         
-    })
+#     })
 #fin paso 2 Redirect
 
 #paso 3 Redirect = Finalmente, la implementación del login
@@ -100,13 +100,14 @@ def login_view(request):
         if user:
             login(request, user)
             messages.success(request, 'Bienvenido {}'.format(user.username))
-            return redirect('profesores')
+            return redirect('admin:index')
         else: 
             messages.error(request, 'Usuario o contraseña incorrectos')
     return render(request, 'Inicio_sesion.html',{
 
     })
 #fin paso 3 Redirect
+
 
 def form_registro(request):
     return render(request, 'form_registro.html')
