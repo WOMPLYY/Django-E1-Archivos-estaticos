@@ -40,7 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
+    'users',
+    'import_export',
+    'Actividades',
+    'Inventario',
+    'Prestamo',
+    'Estudiantes',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +59,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'proyectos.urls'
+
+AUTH_USER_MODEL = 'users.User'
+
+
 
 TEMPLATES = [
     {
@@ -124,3 +133,4 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

@@ -6,8 +6,8 @@ MYSQL = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'huertadbpy',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': '0977',
         'HOST': 'localhost',
-        'PORT': '3306'
+        'PORT': '3307'
     }
 }

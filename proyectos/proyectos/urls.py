@@ -35,6 +35,7 @@ urlpatterns = [
     # path('login/', views.login, name='login'),
     #fin paso 1 LOGIN
     path('Inicio_sesion/', views.login_view, name='Inicio_sesion'),
+    path('logout', views.logout_view, name='logout'),
     path('form_registro/', views.form_registro, name='form_registro'),
     path('profesores/', views.profesores, name='profesores'),
     path('actividades/', views.actividades, name='actividades'),
@@ -46,4 +47,7 @@ urlpatterns = [
     path('nuevo/', views.nuevo, name='nuevo'),
     path('perfil/', views.perfil, name='perfil'),
     path('pruebas/', views.pruebas, name='pruebas'),
+    # asi podemos obtener la informacion de un formulario basado en una clase
+    path('registro/', views.register, name='register'),
+    # fin
 ]

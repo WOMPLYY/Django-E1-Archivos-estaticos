@@ -10,7 +10,7 @@
   <title>Inicio de Sesion</title>
 </head>
 <body>
-  {% if messages %}
+  <!-- {% if messages %}
   {% for message in messages %}
     <div class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-danger{% endif %}">
       <button type="button" class="close" data-dismiss="alert">x</button>
@@ -18,29 +18,24 @@
     </div>
 
   {% endfor %}
-{% endif %}
-  <!-- <div class="container">
+{% endif %} -->
+  <div class="container">
 
     {% if messages %}
       {% for message in messages %}
-        {% if message.tags == 'success' %}
-          <div class="alert alert-success">
-            {{ message }}
-          </div>
-        {% else %}
-          <div class="alert alert-danger">
-            <button type="button" class="close" data-dismiss="alert">x</button>
-            {{ message }}
-          </div>
-        {% endif %}
+      <div class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-danger{% endif %}">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        {{ message }}
+      </div>
       {% endfor %}
     {% endif %}
 
     <div class="row">
-      <div class="col"> -->
+      <div class="col">
 
         <!-- <form action="{% url 'profesores' %}" method="POST" class="form-register" id="formReg"> -->
-        <!-- <form method="POST" class="form-register" id="formReg">
+        <center>
+        <form method="POST" class="form-register" id="formReg">
           {% csrf_token %}
           <h4>Inicio de Sesion</h4>
           <div class="form_grupo" id="form_correo">
@@ -52,14 +47,14 @@
           </div>
 
           <button type="submit" class="btn-neon">Iniciar Sesion</button><br><br>
-          <p><a href="{% url 'form_registro' %}">Registrate</a></p>
-        </form> -->
-
-      <!-- </div>
+          <p><a href="{% url 'register' %}">Registrate</a></p>
+        </form>
+      </center>
+      </div>
     </div>
-  </div> -->
+  </div>
 <!-- <form action="{% url 'profesores' %}" method="POST" class="form-register" id="formReg"> -->
-  <form method="POST" class="form-register" id="formReg">
+  <!-- <form method="POST" class="form-register" id="formReg">
     {% csrf_token %}
     <h4>Inicio de Sesion</h4>
     <div class="form_grupo" id="form_correo">
@@ -72,7 +67,7 @@
 
     <button type="submit" class="btn-neon">Iniciar Sesion</button><br><br>
     <p><a href="{% url 'form_registro' %}">Registrate</a></p>
-  </form>
+  </form> -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

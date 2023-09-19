@@ -170,6 +170,15 @@ option{
 }
 }
 
+.alert {
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 9rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  margin-top: -200px;
+}
+
 @media (max-width: 660px){
   .form-register {
     width: 65%;

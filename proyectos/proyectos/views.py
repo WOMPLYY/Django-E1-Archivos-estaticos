@@ -4,6 +4,9 @@ from django.contrib.auth import authenticate
 from django.shortcuts import redirect
 from django.contrib.auth import logout
 from django.contrib import messages
+from .forms import RegisterForm
+# from django.contrib.auth.models import User
+from users.models import User
 
 
 def index(request):
@@ -108,6 +111,36 @@ def login_view(request):
     })
 #fin paso 3 Redirect
 
+def logout_view(request):
+    logout(request)
+    messages.success(request, 'sessión cerrada exitosamente')
+    return redirect('Inicio_sesion')
+
+def register(request):
+    form = RegisterForm( request.POST or None)
+
+# asi podemos obtener la informacion de un formulario basado en una clase
+    if request.method == 'POST' and form.is_valid():
+
+        # username = form.cleaned_data.get('username')
+        # email = form.cleaned_data.get('email')
+        # password = form.cleaned_data.get('password')
+
+        # print(username)
+        # print(email)
+        # print(password)
+
+
+        user = form.save()
+        if user:
+            login(request, user)
+            messages.success(request, 'Usuario creado exitosamente')
+            return redirect('Inicio_sesion')
+
+    return render(request, 'register.html', {
+        'form': form
+    })
+# fin
 
 def form_registro(request):
     return render(request, 'form_registro.html')
