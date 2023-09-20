@@ -3,11 +3,10 @@ from django.db import models
 #1 ---------tabla-fuerte-------------------------------------------------------------------------------------------
 class Curso(models.Model):
     # id_curso = models.IntegerField(verbose_name='id del curso')
-    codigo_curso = models.CharField(max_length=5,verbose_name='Codigo del curso')
     nombre_curso = models.CharField(max_length=5,verbose_name='Nombre del curso')
 
     def __str__(self):
-        return self.codigo_curso
+        return self.nombre_curso
 
     class Meta:
         verbose_name = 'curso'

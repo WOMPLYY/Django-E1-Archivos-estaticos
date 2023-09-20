@@ -15,8 +15,8 @@ class RolResource(resources.ModelResource):
 
 #-----------tabla-fuerte-admin----------------------------------------------------------------------------------------
 class CursoAdmin(ImportExportModelAdmin,admin.ModelAdmin):
-    search_fields = ('codigo_curso','nombre_curso')
-    list_display = ('codigo_curso','nombre_curso')
+    search_fields = ('nombre_curso',)
+    list_display = ('nombre_curso',)
 # -------------------------------------------------------------------------------------------------------------------
 
 #------tabla-fuerte-admin---------------------------------------------------------------------------------------------
